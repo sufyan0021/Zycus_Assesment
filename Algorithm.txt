@@ -1,0 +1,17 @@
+﻿Question:Disk Backed Map Collection:
+
+Implement a Map, which spills on to disk when it exceeds the heap, or a specified limit.
+oTime Complexity should be same as Current NavigableMap implementations (eg: TreeMap)
+oShould be capable of handling in a multithreaded environment. 
+oput() and get() operations, should be Thread Safe.
+oShould be Serializable to disk
+Should provide API level Tuning configurations, Where ever applicable.
+
+Answer:
+Algorithm:
+i)first to create a OutOfMemory Error using put command insert huge data in the Map Data structure and surround it with try-catch.
+ii)When OutOfMemory Error occurs the control is transferred in catch block.
+iii)The process of serialiaztion is done to write the data that spills heap memory to disk using Object Output Stream.
+iv)Then desrializing also takes place simultaneously using thread concept.
+v)The data is printed on screen.
+Note:Collections.synchronized is used to make put and get method thread safe.
